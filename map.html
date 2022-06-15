@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="listaProductos"></div>
+    <div id="listaMaterias"></div>
+
+    <script src="./map.js"></script>
+
+    <script>
+        const products = [
+            {name: "taco", precio: 15,},
+            {name: "pizza", precio: 150,}
+        ];
+        const listaProductos = document.getElementById("listaProductos");
+
+        const newProducts = products.map(producto => {
+            return listaProductos.innerHTML += `<li>${producto.name + ": $"}${producto.precio}</li>`;}
+        );
+
+        //Seleccionar un array y ponerlo en un String
+        listaProductos.innerHTML = newProducts.join();
+    </script>
+    
+</body>
+</html>
